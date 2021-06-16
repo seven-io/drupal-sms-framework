@@ -1,0 +1,10 @@
+sms_gateway.settings.sms77:
+  label: 'Sms77'
+  mapping:
+    api_key:
+      label: 'API Key'
+      type: string
+    from:
+      label: 'From (sender)'
+      type: string
+  type: sms_gateway_settings

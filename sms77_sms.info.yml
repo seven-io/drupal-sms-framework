@@ -1,0 +1,13 @@
+core_version_requirement: ^8 || ^9
+dependencies:
+  - smsframework:sms
+description: Sms77.io Gateway for SMS Framework.
+name: Sms77 SMS Module
+package: "Sms77 SMS"
+type: module
+
+# Information added by Drupal.org packaging script on 2021-06-16
+core: '8.x'
+datestamp: 1623843180
+project: 'sms77_sms'
+version: '1.0.0'
