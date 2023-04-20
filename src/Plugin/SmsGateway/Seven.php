@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sms77_sms\Plugin\SmsGateway;
+namespace Drupal\seven_sms\Plugin\SmsGateway;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Datetime\DrupalDateTime;
@@ -26,16 +26,16 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * @SmsGateway(
  *   credit_balance_available = TRUE,
- *   id = "sms77",
+ *   id = "seven",
  *   incoming = TRUE,
  *   incoming_route = TRUE,
- *   label = @Translation("Sms77"),
+ *   label = @Translation("Seven"),
  *   outgoing_message_max_recipients = 10000,
  *   reports_pull = TRUE,
  *   reports_push = TRUE,
  * )
  */
-class Sms77 extends SmsGatewayPluginBase implements ContainerFactoryPluginInterface {
+class Seven extends SmsGatewayPluginBase implements ContainerFactoryPluginInterface {
     /** @var Client $httpClient */
     protected $httpClient;
     /** @var MessengerInterface $messenger */
@@ -81,27 +81,27 @@ class Sms77 extends SmsGatewayPluginBase implements ContainerFactoryPluginInterf
         $form = parent::buildConfigurationForm($form, $form_state);
         $cfg = $this->getConfiguration();
 
-        $form['sms77'] = [
+        $form['seven'] = [
             '#open' => true,
-            '#title' => $this->t('Sms77'),
+            '#title' => 'seven',
             '#type' => 'details',
         ];
 
-        $form['sms77']['help'] = [
+        $form['seven']['help'] = [
             '#tag' => 'p',
             '#type' => 'html_tag',
             '#value' => $this->t('API keys can be found at 
-<a href="https://app.sms77.io/developer">Dashboard->Developer</a>.'),
+<a href="https://app.seven.io/developer">Dashboard->Developer</a>.'),
         ];
 
-        $form['sms77']['api_key'] = [
+        $form['seven']['api_key'] = [
             '#default_value' => $cfg['api_key'],
             '#required' => true,
             '#title' => $this->t('API Key'),
             '#type' => 'textfield',
         ];
 
-        $form['sms77']['from'] = [
+        $form['seven']['from'] = [
             '#default_value' => $cfg['from'],
             '#title' => t('Sender name'),
             '#type' => 'textfield',
@@ -237,7 +237,7 @@ class Sms77 extends SmsGatewayPluginBase implements ContainerFactoryPluginInterf
 
     private function request($method, $endpoint, $json = null) {
         return Json::decode($this->httpClient->request('post',
-            "https://gateway.sms77.io/api/$endpoint", [
+            "https://gateway.seven.io/api/$endpoint", [
                 'connect_timeout' => 10,
                 'headers' => [
                     'Content-Type' => 'application/json',
@@ -254,9 +254,9 @@ class Sms77 extends SmsGatewayPluginBase implements ContainerFactoryPluginInterf
 
     /**
      * Process an incoming message POST request.
-     * Sms77 passes only one message per request.
+     * seven passes only one message per request.
      * API documentation:
-     * https://app.sms77.io/settings#inboundsms
+     * https://app.seven.io/settings#inboundsms
      * @param Request $request
      *   The request object.
      * @param SmsGatewayInterface $sms_gateway

@@ -1,5 +1,5 @@
-sms_gateway.settings.sms77:
-  label: 'Sms77'
+sms_gateway.settings.seven:
+  label: 'seven'
   mapping:
     api_key:
       label: 'API Key'

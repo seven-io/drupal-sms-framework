@@ -1,23 +1,23 @@
 {
     "authors": [
         {
-            "email": "matthiez@gmail.com",
-            "homepage": "https://github.com/matthiez",
-            "name": "André matthies",
+            "email": "support@seven.io",
+            "homepage": "https://github.com/seven-io",
+            "name": "seven communications GmbH & Co. KG",
             "role": "Maintainer"
         }
     ],
-    "description": "Integrates Sms77 with Drupal SMS Framework",
-    "homepage": "https://github.com/sms77io/drupal-sms-framework",
+    "description": "Integrates seven with Drupal SMS Framework",
+    "homepage": "https://github.com/seven-io/drupal-sms-framework",
     "license": "GPL-2.0-or-later",
     "minimum-stability": "dev",
-    "name": "sms77/drupal_sms_gateway",
+    "name": "seven-io/drupal_sms_gateway",
     "suggest": {
         "drupal/sms": "^2.0"
     },
     "support": {
-        "issues": "https://github.com/sms77io/drupal-sms-framework/issues",
-        "source": "https://github.com/sms77io/drupal-sms-framework"
+        "issues": "https://github.com/seven-io/drupal-sms-framework/issues",
+        "source": "https://github.com/seven-io/drupal-sms-framework"
     },
     "type": "drupal-module"
 }
